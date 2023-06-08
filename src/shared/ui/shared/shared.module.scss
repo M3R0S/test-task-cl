@@ -1,0 +1,33 @@
+.filling,
+.without_filling {
+    border-radius: 0.4rem;
+    padding: 1.2rem 1.6rem;
+}
+
+.filling {
+    color: var(--color-white);
+    background: var(--color-purple);
+    transition: background var(--transition-timeout-500);
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: var(--color-purple-85);
+    }
+}
+
+.without_filling {
+    border: 0.15rem solid var(--color-purple);
+    color: var(--color-purple);
+    background: var(--color-white);
+    transition: color, border, background var(--transition-timeout-500);
+
+    &:hover,
+    &:focus,
+    &:active {
+        border: 0.15rem solid var(--color-purple-85);
+        color: var(--color-purple-85);
+        background: var(--color-black-4);
+    }
+}
+
