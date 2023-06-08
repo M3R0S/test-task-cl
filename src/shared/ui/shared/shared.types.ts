@@ -1,2 +1,2 @@
-export type SharedTheme = "without_filling" | "filling";
-export type SharedSize = "14";
+export type SharedTheme = "clear" | "without_filling" | "filling";
+export type SharedSize = "12" | "14";

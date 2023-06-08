@@ -4,6 +4,12 @@
     padding: 1.2rem 1.6rem;
 }
 
+.clear {
+    border: none;
+    color: var(--color-purple);
+    background: none;
+}
+
 .filling {
     color: var(--color-white);
     background: var(--color-purple);
@@ -29,5 +35,13 @@
         color: var(--color-purple-85);
         background: var(--color-black-4);
     }
+}
+
+.size_14 {
+    font: var(--font-14-400-20);
+}
+
+.size_12 {
+    font: var(--font-12-400-16);
 }
 
