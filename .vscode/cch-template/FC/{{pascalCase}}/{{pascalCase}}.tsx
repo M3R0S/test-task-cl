@@ -8,7 +8,7 @@ export const {{pascalCase}}: FC<{{pascalCase}}Props> = memo((props) => {
     const { className } = props;
 
     return (
-        <div className={classNames(cl.{{snakeCase}}, [className])}>
+        <div className={classNames(cl.{{snakeCase}}, className)}>
             
         </div>
     );
