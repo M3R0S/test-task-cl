@@ -1,0 +1,188 @@
+.flex {
+    display: flex;
+
+    &.justify_content {
+        &_normal {
+            justify-content: normal;
+        }
+
+        &_start {
+            justify-content: flex-start;
+        }
+
+        &_center {
+            justify-content: center;
+        }
+
+        &_end {
+            justify-content: flex-end;
+        }
+
+        &_space_between {
+            justify-content: space-between;
+        }
+    }
+
+    &.align_items {
+        &_normal {
+            align-items: normal;
+        }
+
+        &_start {
+            align-items: flex-start;
+        }
+
+        &_center {
+            align-items: center;
+        }
+
+        &_end {
+            align-items: flex-end;
+        }
+    }
+
+    &.direction {
+        &_row {
+            flex-direction: row;
+        }
+
+        &_column {
+            flex-direction: column;
+        }
+    }
+
+    &.wrap {
+        &_nowrap {
+            flex-wrap: nowrap;
+        }
+
+        &_wrap {
+            flex-wrap: wrap;
+        }
+    }
+
+    &.max {
+        width: 100%;
+    }
+
+    &.grow {
+        &_1 {
+            flex-grow: 1;
+        }
+    }
+
+    &.gap {
+        &_2 {
+            gap: 0.2rem;
+        }
+
+        &_4 {
+            gap: 0.4rem;
+        }
+
+        &_6 {
+            gap: 0.6rem;
+        }
+
+        &_8 {
+            gap: 0.8rem;
+        }
+
+        &_10 {
+            gap: 1rem;
+        }
+
+        &_12 {
+            gap: 1.2rem;
+        }
+
+        &_14 {
+            gap: 1.4rem;
+        }
+
+        &_16 {
+            gap: 1.6rem;
+        }
+
+        &_18 {
+            gap: 1.8rem;
+        }
+
+        &_20 {
+            gap: 2rem;
+        }
+
+        &_22 {
+            gap: 2.2rem;
+        }
+
+        &_24 {
+            gap: 2.4rem;
+        }
+
+        &_26 {
+            gap: 2.6rem;
+        }
+
+        &_28 {
+            gap: 2.8rem;
+        }
+
+        &_30 {
+            gap: 3rem;
+        }
+
+        &_32 {
+            gap: 3.2rem;
+        }
+
+        &_34 {
+            gap: 3.4rem;
+        }
+
+        &_36 {
+            gap: 3.6rem;
+        }
+
+        &_38 {
+            gap: 3.8rem;
+        }
+
+        &_40 {
+            gap: 4rem;
+        }
+
+        &_42 {
+            gap: 4.2rem;
+        }
+
+        &_44 {
+            gap: 4.4rem;
+        }
+
+        &_46 {
+            gap: 4.6rem;
+        }
+
+        &_48 {
+            gap: 4.8rem;
+        }
+
+        &_50 {
+            gap: 5rem;
+        }
+
+        &_56 {
+            gap: 5.6rem;
+        }
+
+        &_64 {
+            gap: 6.4rem;
+        }
+
+        &_86 {
+            gap: 8.6rem;
+        }
+    }
+}
+
