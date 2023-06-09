@@ -1,0 +1,19 @@
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .svg {
+        fill: var(--color-primary);
+    }
+
+    &.standart {
+        width: 100%;
+        height: 100%;
+    }
+
+    &.app {
+        width: 100vw;
+        height: 100vh;
+    }
+}
