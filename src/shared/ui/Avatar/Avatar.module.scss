@@ -1,0 +1,7 @@
+.avatar {
+    &.border_radius {
+        &_50proc {
+            border-radius: 50%;
+        }
+    }
+}
