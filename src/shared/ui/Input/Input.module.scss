@@ -1,0 +1,28 @@
+.input {
+    outline: none;
+
+    &.primary,
+    &.secondary {
+        border: 0.1rem solid var(--color-black-16);
+        border-radius: 0.4rem;
+        padding: 1.2rem;
+        font: var(--font-14-400-20);
+        color: var(--color-primary);
+
+        &::placeholder {
+            color: var(--color-black-48);
+        }
+    }
+
+    &.secondary {
+        background: var(--color-black-4);
+    }
+
+    &.size_300 {
+        width: 30rem;
+    }
+
+    &.size_400 {
+        width: 40rem;
+    }
+}
