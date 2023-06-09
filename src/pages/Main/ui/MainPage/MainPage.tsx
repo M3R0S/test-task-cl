@@ -1,13 +1,19 @@
 import { FC, memo } from "react";
 
-import cl from './MainPage.module.scss'
+import cl from "./MainPage.module.scss";
+
+import { Page } from "widgets/Page";
+import { MiniProfile } from "entities/MiniProfile";
 
 const MainPage: FC = () => {
     return (
-        <div className={cl.main_page}>
-            
-        </div>
+        <Page className={cl.main_page}>
+            <MiniProfile
+                name="Иван"
+                surname="Иванов"
+            />
+        </Page>
     );
 };
 
-export default memo(MainPage)
+export default memo(MainPage);

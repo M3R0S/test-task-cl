@@ -6,7 +6,7 @@ export type FlexJustifyContent = "normal" | "start" | "center" | "end" | "space_
 export type FlexAlignItems = "normal" | "start" | "center" | "end";
 export type FlexDirection = "column" | "row";
 export type FlexWrap = "nowrap" | "wrap";
-export type FlexTag = "div" | "section" | "nav" | "header";
+export type FlexTag = "div" | "section" | "nav" | "header" | "main";
 export type FlexGrow = "1";
 
 export interface FlexProps extends HTMLAttributes<HTMLElement> {
