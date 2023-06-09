@@ -6,11 +6,11 @@ import { ButtonProps } from "./Button.types";
 import cls from "../shared/shared.module.scss";
 
 export const Button: FC<ButtonProps> = (props) => {
-    const { className, children, theme = "filling", size = "14", ...otherProps } = props;
+    const { className, children, theme = "filling", size = "14", gap, ...otherProps } = props;
 
     return (
         <button
-            className={classNames(cl.button, className, cls[`size_${size}`], cls[theme])}
+            className={classNames(cl.button, className, cls[`size_${size}`], cls[theme], cls[`gap_${gap}`])}
             {...otherProps}
         >
             {children}

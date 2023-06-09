@@ -2,6 +2,7 @@ import { FC } from "react";
 import classNames from "classnames";
 
 import cl from "./Flex.module.scss";
+import cls from "../../shared/shared.module.scss"
 import { FlexProps } from "./Flex.types";
 
 export const Flex: FC<FlexProps> = (props) => {
@@ -28,7 +29,7 @@ export const Flex: FC<FlexProps> = (props) => {
     ];
 
     const mods = {
-        [cl[`gap_${gap}`]]: Boolean(gap),
+        [cls[`gap_${gap}`]]: Boolean(gap),
         [cl.max]: Boolean(max),
         [cl[`grow_${grow}`]]: Boolean(grow),
     };
