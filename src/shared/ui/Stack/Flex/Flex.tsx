@@ -12,8 +12,6 @@ export const Flex: FC<FlexProps> = (props) => {
         direction,
         alignItems = "normal",
         justifyContent = "normal",
-        rowGap,
-        columnGap,
         gap,
         max,
         wrap = "nowrap",
@@ -31,9 +29,7 @@ export const Flex: FC<FlexProps> = (props) => {
 
     const mods = {
         [cl[`gap_${gap}`]]: Boolean(gap),
-        [cl.max]: max,
-        [cl[`gap_row_${rowGap}`]]: Boolean(rowGap),
-        [cl[`gap_column_${columnGap}`]]: Boolean(columnGap),
+        [cl.max]: Boolean(max),
         [cl[`grow_${grow}`]]: Boolean(grow),
     };
 

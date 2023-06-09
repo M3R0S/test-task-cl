@@ -43,8 +43,6 @@ export interface FlexProps extends HTMLAttributes<HTMLElement> {
     justifyContent?: FlexJustifyContent;
     alignItems?: FlexAlignItems;
     direction: FlexDirection;
-    rowGap?: FlexGap;
-    columnGap?: FlexGap;
     wrap?: FlexWrap;
     gap?: FlexGap;
     max?: boolean;
