@@ -6,8 +6,12 @@
     --color-purple: rgb(85 88 250 / 100%);
     --color-purple-85: rgb(85 88 250 / 85%);
     --color-white: rgb(255 255 255 / 100%);
-    --color-black: rgb(0 0 0 / 100%);
     --color-black-4: rgb(0 0 0 / 4%);
+    --color-black-8: rgb(0 0 0 / 8%);
+    --color-black-16: rgb(0 0 0 / 16%);
+    --color-black-24: rgb(0 0 0 / 24%);
+    --color-black-48: rgb(0 0 0 / 48%);
+    --color-black: rgb(0 0 0 / 100%);
     --color-green: rgb(5 174 113 / 100%);
     --color-green-15: rgb(5 174 113 / 15%);
     --color-red: rgb(232 78 88 / 100%);
@@ -23,15 +27,7 @@
     --font-14-600-20: 1.4rem / 2rem var(--font-family-primary-semibold);
     --font-12-400-16: 1.2rem / 1.6rem var(--font-family-primary-regular);
 
-    // input
-    --input-background-gray: rgb(0 0 0 / 4%);
-    --input-border-color-primary: rgb(0 0 0 / 16%);
-    --input-checkbox-border-color-primary: rgb(0 0 0 / 24%);
-    --input-radio-border-color-primary: rgb(0 0 0 / 24%);
-    --input-text-border-color-primary: rgb(0 0 0 / 16%);
-
     // stepper
-    --stepper-line-background: rgb(0 0 0 / 8%);
     --stepper-atom-background: rgb(166 166 166 / 100%);
     --stepper-number-color: rgb(102 102 102 / 100%);
 
