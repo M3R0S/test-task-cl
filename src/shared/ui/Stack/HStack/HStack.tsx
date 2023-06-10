@@ -1,15 +1,14 @@
-import { FC } from "react";
+import { HTMLAttributes } from "react";
 
 import { HStackProps } from "./HStack.types";
 import { Flex } from "../Flex/Flex";
 
-export const HStack: FC<HStackProps> = (props) => {
+export const HStack = <A extends HTMLAttributes<HTMLElement>>(props: HStackProps & A) => {
     return (
-        <Flex
+        <Flex<A>
             alignItems="center"
             direction="row"
             {...props}
         />
     );
 };
-

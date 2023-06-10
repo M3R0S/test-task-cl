@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { HTMLAttributes } from "react";
 import classNames from "classnames";
 
 import cl from "./Flex.module.scss";
-import cls from "../../shared/shared.module.scss"
+import cls from "../../shared/shared.module.scss";
 import { FlexProps } from "./Flex.types";
 
-export const Flex: FC<FlexProps> = (props) => {
+export const Flex = <A extends HTMLAttributes<HTMLElement>>(props: FlexProps & A) => {
     const {
         className,
         Tag = "div",
@@ -43,4 +43,3 @@ export const Flex: FC<FlexProps> = (props) => {
         </Tag>
     );
 };
-

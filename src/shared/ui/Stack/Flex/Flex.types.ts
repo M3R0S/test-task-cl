@@ -1,4 +1,4 @@
-import { ReactNode, HTMLAttributes } from "react";
+import { ReactNode } from "react";
 
 import { SharedGap } from "../../shared/shared.types";
 
@@ -6,10 +6,10 @@ export type FlexJustifyContent = "normal" | "start" | "center" | "end" | "space_
 export type FlexAlignItems = "normal" | "start" | "center" | "end";
 export type FlexDirection = "column" | "row";
 export type FlexWrap = "nowrap" | "wrap";
-export type FlexTag = "div" | "section" | "nav" | "header" | "main";
+export type FlexTag = "div" | "section" | "nav" | "header" | "main" | "form";
 export type FlexGrow = "1";
 
-export interface FlexProps extends HTMLAttributes<HTMLElement> {
+export interface FlexProps {
     className?: string;
     children: ReactNode;
     Tag?: FlexTag;
