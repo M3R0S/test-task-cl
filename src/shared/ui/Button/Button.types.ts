@@ -8,4 +8,5 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: SharedTheme;
     size?: SharedSize;
     gap?: SharedGap;
+    isDisabled?: boolean
 }
