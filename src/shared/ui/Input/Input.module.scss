@@ -1,5 +1,11 @@
+.label {
+    font: var(--font-14-400-20);
+    color: var(--color-primary);
+}
+
 .input {
     outline: none;
+    transition: all var(--transition-timeout-500);
 
     &.primary,
     &.secondary {
@@ -18,6 +24,14 @@
         background: var(--color-black-4);
     }
 
+    &.valid {
+        border: 0.1rem solid var(--color-green);
+    }
+
+    &.not_valid {
+        border: 0.1rem solid var(--color-red);
+    }
+
     &.size_300 {
         width: 30rem;
     }
@@ -25,4 +39,8 @@
     &.size_400 {
         width: 40rem;
     }
+}
+
+.text {
+    height: 1.6rem;
 }
