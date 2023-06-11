@@ -1,4 +1,9 @@
 .main_page {
     padding: 2.4rem;
     gap: 2.4rem;
+
+    .row {
+        border: 0.1rem solid var(--color-black-8);
+        width: 100%;
+    }
 }
