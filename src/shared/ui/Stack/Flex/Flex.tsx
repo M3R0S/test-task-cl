@@ -14,6 +14,8 @@ export const Flex = <A extends HTMLAttributes<HTMLElement>>(props: FlexProps & A
         alignItems = "normal",
         justifyContent = "normal",
         gap,
+        rowGap,
+        columnGap,
         max,
         wrap = "nowrap",
         grow,
@@ -30,6 +32,8 @@ export const Flex = <A extends HTMLAttributes<HTMLElement>>(props: FlexProps & A
 
     const mods = {
         [cls[`gap_${gap}`]]: Boolean(gap),
+        [cls[`row_gap_${rowGap}`]]: Boolean(rowGap),
+        [cls[`column_gap_${columnGap}`]]: Boolean(columnGap),
         [cl.max]: Boolean(max),
         [cl[`grow_${grow}`]]: Boolean(grow),
     };

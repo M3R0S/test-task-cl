@@ -18,6 +18,8 @@ export interface FlexProps {
     direction: FlexDirection;
     wrap?: FlexWrap;
     gap?: SharedGap;
+    rowGap?: SharedGap;
+    columnGap?: SharedGap;
     max?: boolean;
     grow?: FlexGrow;
 }

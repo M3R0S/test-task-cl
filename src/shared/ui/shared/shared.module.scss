@@ -188,3 +188,230 @@
     }
 }
 
+.column_gap {
+    &_2 {
+        column-gap: 0.2rem;
+    }
+
+    &_4 {
+        column-gap: 0.4rem;
+    }
+
+    &_6 {
+        column-gap: 0.6rem;
+    }
+
+    &_8 {
+        column-gap: 0.8rem;
+    }
+
+    &_10 {
+        column-gap: 1rem;
+    }
+
+    &_12 {
+        column-gap: 1.2rem;
+    }
+
+    &_14 {
+        column-gap: 1.4rem;
+    }
+
+    &_16 {
+        column-gap: 1.6rem;
+    }
+
+    &_18 {
+        column-gap: 1.8rem;
+    }
+
+    &_20 {
+        column-gap: 2rem;
+    }
+
+    &_22 {
+        column-gap: 2.2rem;
+    }
+
+    &_24 {
+        column-gap: 2.4rem;
+    }
+
+    &_26 {
+        column-gap: 2.6rem;
+    }
+
+    &_28 {
+        column-gap: 2.8rem;
+    }
+
+    &_30 {
+        column-gap: 3rem;
+    }
+
+    &_32 {
+        column-gap: 3.2rem;
+    }
+
+    &_34 {
+        column-gap: 3.4rem;
+    }
+
+    &_36 {
+        column-gap: 3.6rem;
+    }
+
+    &_38 {
+        column-gap: 3.8rem;
+    }
+
+    &_40 {
+        column-gap: 4rem;
+    }
+
+    &_42 {
+        column-gap: 4.2rem;
+    }
+
+    &_44 {
+        column-gap: 4.4rem;
+    }
+
+    &_46 {
+        column-gap: 4.6rem;
+    }
+
+    &_48 {
+        column-gap: 4.8rem;
+    }
+
+    &_50 {
+        column-gap: 5rem;
+    }
+
+    &_56 {
+        column-gap: 5.6rem;
+    }
+
+    &_64 {
+        column-gap: 6.4rem;
+    }
+
+    &_86 {
+        column-gap: 8.6rem;
+    }
+}
+
+.row_gap {
+    &_2 {
+        row-gap: 0.2rem;
+    }
+
+    &_4 {
+        row-gap: 0.4rem;
+    }
+
+    &_6 {
+        row-gap: 0.6rem;
+    }
+
+    &_8 {
+        row-gap: 0.8rem;
+    }
+
+    &_10 {
+        row-gap: 1rem;
+    }
+
+    &_12 {
+        row-gap: 1.2rem;
+    }
+
+    &_14 {
+        row-gap: 1.4rem;
+    }
+
+    &_16 {
+        row-gap: 1.6rem;
+    }
+
+    &_18 {
+        row-gap: 1.8rem;
+    }
+
+    &_20 {
+        row-gap: 2rem;
+    }
+
+    &_22 {
+        row-gap: 2.2rem;
+    }
+
+    &_24 {
+        row-gap: 2.4rem;
+    }
+
+    &_26 {
+        row-gap: 2.6rem;
+    }
+
+    &_28 {
+        row-gap: 2.8rem;
+    }
+
+    &_30 {
+        row-gap: 3rem;
+    }
+
+    &_32 {
+        row-gap: 3.2rem;
+    }
+
+    &_34 {
+        row-gap: 3.4rem;
+    }
+
+    &_36 {
+        row-gap: 3.6rem;
+    }
+
+    &_38 {
+        row-gap: 3.8rem;
+    }
+
+    &_40 {
+        row-gap: 4rem;
+    }
+
+    &_42 {
+        row-gap: 4.2rem;
+    }
+
+    &_44 {
+        row-gap: 4.4rem;
+    }
+
+    &_46 {
+        row-gap: 4.6rem;
+    }
+
+    &_48 {
+        row-gap: 4.8rem;
+    }
+
+    &_50 {
+        row-gap: 5rem;
+    }
+
+    &_56 {
+        row-gap: 5.6rem;
+    }
+
+    &_64 {
+        row-gap: 6.4rem;
+    }
+
+    &_86 {
+        row-gap: 8.6rem;
+    }
+}
