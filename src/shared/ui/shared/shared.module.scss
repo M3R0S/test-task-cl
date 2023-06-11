@@ -8,6 +8,11 @@
 .filling,
 .without_filling {
     cursor: pointer;
+
+    &.disabled {
+        opacity: 0.7;
+        cursor: default;
+    }
 }
 
 .clear {
@@ -21,10 +26,18 @@
     background: var(--color-purple);
     transition: background var(--transition-timeout-500);
 
-    &:hover:enabled,
-    &:focus:enabled,
-    &:active:enabled {
+    &:hover,
+    &:focus,
+    &:active {
         background: var(--color-purple-85);
+    }
+
+    &.disabled {
+        &:hover,
+        &:focus,
+        &:active {
+            background: var(--color-purple);
+        }
     }
 }
 
@@ -34,18 +47,23 @@
     background: var(--color-white);
     transition: color, border, background var(--transition-timeout-500);
 
-    &:hover:enabled,
-    &:focus:enabled,
-    &:active:enabled {
+    &:hover,
+    &:focus,
+    &:active {
         border: 0.15rem solid var(--color-purple-85);
         color: var(--color-purple-85);
         background: var(--color-black-4);
     }
-}
 
-.disabled {
-    opacity: 0.7;
-    cursor: default;
+    &.disabled {
+        &:hover,
+        &:focus,
+        &:active {
+            border: 0.15rem solid var(--color-purple);
+            color: var(--color-purple);
+            background: var(--color-white);
+        }
+    }
 }
 
 .size_14 {
