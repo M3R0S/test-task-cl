@@ -25,7 +25,9 @@
     }
 
     &.valid {
-        border: 0.1rem solid var(--color-green);
+        &:not(:focus) {
+            border: 0.1rem solid var(--color-green);
+        }
     }
 
     &.not_valid {
