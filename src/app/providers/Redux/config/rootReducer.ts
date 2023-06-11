@@ -1,5 +1,7 @@
+import { editFormSlice } from "features/EditForm";
 import {rtkApi} from "shared/api/rtkApi"
 
 export const rootReducer = {
-    [rtkApi.reducerPath]: rtkApi.reducer
+    [editFormSlice.name]: editFormSlice.reducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
 };
