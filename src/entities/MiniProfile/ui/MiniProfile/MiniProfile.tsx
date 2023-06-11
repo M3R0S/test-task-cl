@@ -6,8 +6,9 @@ import { MiniProfileLinks, MiniProfileProps } from "./MiniProfile.types";
 
 import AvatarImg from "shared/assets/image/Avatar.png";
 import { ReactComponent as FolderSvg } from "shared/assets/svg/Folder.svg";
+import { useScreenSize } from "shared/lib/hooks/useScreenSize";
 import { Avatar } from "shared/ui/Avatar";
-import { HStack, VStack } from "shared/ui/Stack";
+import { HStack, Stack, VStack } from "shared/ui/Stack";
 import { Text } from "shared/ui/Text";
 import { AppLink } from "shared/ui/AppLink";
 import { Svg } from "shared/ui/Svg";
@@ -41,6 +42,8 @@ export const MiniProfile: FC<MiniProfileProps> = memo((props) => {
         },
     ];
 
+    const { screenWidth } = useScreenSize();
+
     return (
         <HStack
             Tag="header"
@@ -61,7 +64,11 @@ export const MiniProfile: FC<MiniProfileProps> = memo((props) => {
                 >
                     {`${name} ${surname ? surname : ""}`}
                 </Text>
-                <HStack gap="16">
+                <Stack
+                    alignItems="start"
+                    direction={screenWidth >= 400 ? "row" : "column"}
+                    gap="16"
+                >
                     {miniProfileLinks.map(({ id, src, title }) => (
                         <AppLink
                             gap="4"
@@ -74,7 +81,7 @@ export const MiniProfile: FC<MiniProfileProps> = memo((props) => {
                             {title}
                         </AppLink>
                     ))}
-                </HStack>
+                </Stack>
             </VStack>
         </HStack>
     );
