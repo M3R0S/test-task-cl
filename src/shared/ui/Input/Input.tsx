@@ -15,6 +15,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         validateMessage,
         isValidate = true,
         isDirty = false,
+        name,
         ...otherProps
     } = props;
 
@@ -22,8 +23,17 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 
     return (
         <VStack gap="8">
-            {label && <label className={cl.label}>{label}</label>}
+            {label && (
+                <label
+                    htmlFor={name}
+                    className={cl.label}
+                >
+                    {label}
+                </label>
+            )}
             <input
+                name={name}
+                id={name}
                 ref={ref}
                 className={classNames(
                     cl.input,
