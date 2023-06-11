@@ -72,7 +72,11 @@ export const EditFormMain: FC<EditFormMainProps> = memo((props) => {
     );
 
     const onClick = useCallback(() => {
-        navigate(PathRoutes.CREATE_1);
+        navigate(PathRoutes.CREATE_1, {
+            state: {
+                create: "1",
+            },
+        });
     }, [navigate]);
 
     const { name, onBlur, ref, onChange } = register("phone");
