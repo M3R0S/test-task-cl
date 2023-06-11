@@ -1,6 +1,7 @@
 export const PathRoutes = {
     DEFAULT: "/",
     MAIN: "/main",
+    UNAVAILABLE: "/unavailable",
     CREATE_1: "/create/1",
     CREATE_2: "/create/2",
     CREATE_3: "/create/3",

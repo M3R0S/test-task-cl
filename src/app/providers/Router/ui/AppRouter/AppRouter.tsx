@@ -10,9 +10,7 @@ export const AppRouter: FC = memo(() => {
     const renderWithWrapper = useCallback((route: AppRouteProps) => {
         const { path, routeId, element } = route;
 
-        const component = (
-            <Suspense fallback={<Loader theme="app" />}>{element}</Suspense>
-        );
+        const component = <Suspense fallback={<Loader theme="app" />}>{element}</Suspense>;
 
         return (
             <Route
@@ -25,3 +23,4 @@ export const AppRouter: FC = memo(() => {
 
     return <Routes>{Object.values(routesConfig).map(renderWithWrapper)}</Routes>;
 });
+

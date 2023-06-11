@@ -3,6 +3,7 @@ import { RoutesConfig } from "./routesConfig.types";
 import { MainPage } from "pages/Main";
 import { NotFoundPage } from "pages/NotFound";
 import { CreatePage } from "pages/Create";
+import { UnavailablePage } from "pages/Unavailable";
 import { PathRoutes } from "shared/config/router/pathRoutes";
 
 export const routesConfig: RoutesConfig = {
@@ -30,6 +31,11 @@ export const routesConfig: RoutesConfig = {
         routeId: 5,
         path: PathRoutes.DEFAULT,
         element: <MainPage />,
+    },
+    UNAVAILABLE: {
+        routeId: 6,
+        path: PathRoutes.UNAVAILABLE,
+        element: <UnavailablePage />,
     },
     // last
     NOT_FOUND: {

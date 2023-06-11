@@ -1,4 +1,4 @@
-.not_found_page {
+.unavailable_page {
     border-radius: 2.4rem;
     padding: 30rem 11rem;
 
@@ -16,7 +16,7 @@
 }
 
 @media (width <= 600px) {
-    .not_found_page {
+    .unavailable_page {
         padding: 8rem 4rem;
     }
 }

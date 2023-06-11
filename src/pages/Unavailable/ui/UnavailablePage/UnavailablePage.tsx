@@ -1,16 +1,16 @@
 import { FC, memo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-import cl from "./NotFoundPage.module.scss";
+import cl from "./UnavailablePage.module.scss";
 
 import { Page } from "widgets/Page";
 import { PathRoutes } from "shared/config/router/pathRoutes";
 import { HStack, VStack } from "shared/ui/Stack";
 import { Text } from "shared/ui/Text";
-import { AppLink } from "shared/ui/AppLink";
 import { Button } from "shared/ui/Button";
+import { AppLink } from "shared/ui/AppLink";
 
-const NotFoundPage: FC = () => {
+const UnavailablePage: FC = () => {
     const navigate = useNavigate();
 
     const onClick = useCallback(() => {
@@ -18,7 +18,7 @@ const NotFoundPage: FC = () => {
     }, [navigate]);
 
     return (
-        <Page className={cl.not_found_page}>
+        <Page className={cl.unavailable_page}>
             <VStack
                 alignItems="center"
                 justifyContent="center"
@@ -29,7 +29,7 @@ const NotFoundPage: FC = () => {
                     size="20_600"
                     theme="red"
                 >
-                    Страница не существует
+                    Доступ к странице заблокирован
                 </Text>
                 <HStack
                     className={cl.wrapper}
@@ -57,4 +57,4 @@ const NotFoundPage: FC = () => {
     );
 };
 
-export default memo(NotFoundPage);
+export default memo(UnavailablePage);
