@@ -20,7 +20,12 @@
         }
     }
 
+    &.primary {
+        width: 26rem;
+    }
+
     &.secondary {
+        width: 36rem;
         background: var(--color-black-4);
     }
 
@@ -33,16 +38,17 @@
     &.not_valid {
         border: 0.1rem solid var(--color-red);
     }
-
-    &.size_300 {
-        width: 30rem;
-    }
-
-    &.size_400 {
-        width: 40rem;
-    }
 }
 
 .text {
     height: 1.6rem;
+}
+
+@media (width <= 530px) {
+    .input {
+        &.secondary {
+            width: 20rem;
+            background: var(--color-black-4);
+        }
+    }
 }

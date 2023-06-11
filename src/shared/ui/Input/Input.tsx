@@ -10,7 +10,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     const {
         className,
         theme = "primary",
-        size = "300",
         label,
         validateMessage,
         isValidate = true,
@@ -35,13 +34,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
                 name={name}
                 id={name}
                 ref={ref}
-                className={classNames(
-                    cl.input,
-                    className,
-                    cl[theme],
-                    { [cl.valid]: isValid && isDirty, [cl.not_valid]: !isValid },
-                    cl[`size_${size}`]
-                )}
+                className={classNames(cl.input, className, cl[theme], {
+                    [cl.valid]: isValid && isDirty,
+                    [cl.not_valid]: !isValid,
+                })}
                 {...otherProps}
             />
             {isValidate && (
