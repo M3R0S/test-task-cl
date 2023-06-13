@@ -3,9 +3,11 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { EditFormMainSchema } from "../../ui/EditFormMain/EditFormMain";
 import { EditFormState } from "../types/editFormState";
 
+import { normalizePhone } from "shared/lib/helpers/normalizePhone";
+
 const initialState: EditFormState = {
-    phone: "+7 (",
-    email: "",
+    phone: "+79787790823",
+    email: "bogdan_yalta@mail.ru",
 };
 
 export const editFormSlice = createSlice({
@@ -14,7 +16,7 @@ export const editFormSlice = createSlice({
     reducers: {
         setFormMain: (state, action: PayloadAction<EditFormMainSchema>) => {
             state.email = action.payload.email;
-            state.phone = action.payload.phone;
+            state.phone = normalizePhone(action.payload.phone);
         },
     },
 });

@@ -50,10 +50,11 @@ export const EditFormMain: FC<EditFormMainProps> = memo((props) => {
     const {
         register,
         handleSubmit,
+        watch,
         formState: { errors, isValid, dirtyFields },
     } = useForm<EditFormMainSchema>({
         resolver: yupResolver(schema),
-        mode: "onBlur",
+        mode: "all",
         defaultValues: {
             email,
             phone,
@@ -110,7 +111,7 @@ export const EditFormMain: FC<EditFormMainProps> = memo((props) => {
                 {...register("email")}
                 label="Email"
                 validateMessage={errors.email?.message}
-                isDirty={dirtyFields.email}
+                isDirty={dirtyFields.email || watch("email") !== ""}
                 type="email"
                 placeholder="tim.jennings@example.com"
                 autoComplete="email"
