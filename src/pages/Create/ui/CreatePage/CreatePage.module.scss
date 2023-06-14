@@ -1,3 +1,13 @@
 .create_page {
-    // todo
+    padding: 6.2rem 11rem 8rem;
+
+    .edit_form {
+        margin-top: 6.7rem;
+    }
+}
+
+@media (width <= 600px) {
+    .create_page {
+        padding: 6.2rem 3rem 8rem;
+    }
 }
