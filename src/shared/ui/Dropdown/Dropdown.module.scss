@@ -1,0 +1,81 @@
+.dropdown {
+    width: 30rem;
+    cursor: pointer;
+}
+
+.option {
+    padding: 1rem;
+    transition: all var(--transition-timeout-200);
+    cursor: pointer !important;
+
+    &:hover,
+    &.focus {
+        color: var(--color-white);
+        background: var(--color-purple);
+    }
+}
+
+.container {
+    border: 0.1rem solid var(--color-black-16);
+    border-radius: 0.4rem;
+    font: var(--font-14-400-20);
+    color: var(--color-primary);
+    transition: border var(--transition-timeout-200);
+
+    &:hover,
+    &.focus {
+        border: 0.1rem solid var(--color-purple);
+    }
+
+    &.valid {
+        border: 0.1rem solid var(--color-green);
+    }
+
+    &.not_valid {
+        border: 0.1rem solid var(--color-red);
+    }
+}
+
+.control {
+    height: 4.4rem;
+    min-height: auto !important;
+    cursor: pointer !important;
+}
+
+.value {
+    padding-left: 1.2rem;
+}
+
+.placeholder {
+    padding-left: 1.2rem;
+    color: var(--color-black-48);
+}
+
+.indicators_container {
+    padding-right: 1.2rem;
+}
+
+.indicator {
+    color: var(--color-black-24);
+    transition: transform var(--transition-timeout-200) !important;
+
+    &.open {
+        transform: rotate(180deg);
+    }
+}
+
+.menu {
+    left: 0;
+    top: 105% !important;
+    border-radius: 0.4rem;
+    box-shadow: 0 0.4rem 2rem var(--color-black-8);
+    background: var(--color-white);
+}
+
+.menu_list {
+    border-radius: 0.4rem;
+}
+
+.text {
+    height: 1.6rem;
+}
