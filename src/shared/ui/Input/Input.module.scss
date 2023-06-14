@@ -1,11 +1,6 @@
-.label {
-    font: var(--font-14-400-20);
-    color: var(--color-primary);
-}
-
 .input {
     outline: none;
-    transition: all var(--transition-timeout-500);
+    transition: all var(--transition-timeout-200);
 
     &.primary,
     &.secondary {
@@ -21,19 +16,29 @@
     }
 
     &.primary {
-        width: 26rem;
+        width: 27.4rem;
+
+        &:hover,
+        &:focus {
+            border: 0.1rem solid var(--color-purple);
+        }
     }
 
     &.secondary {
-        width: 36rem;
+        width: 37.4rem;
         background: var(--color-black-4);
+
+        &:hover,
+        &:focus {
+            border: 0.1rem solid var(--color-purple);
+        }
     }
 
-    &.valid {
+    &.valid.valid {
         border: 0.1rem solid var(--color-green);
     }
 
-    &.not_valid {
+    &.not_valid.not_valid {
         border: 0.1rem solid var(--color-red);
     }
 }
