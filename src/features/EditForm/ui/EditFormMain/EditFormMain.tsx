@@ -51,7 +51,7 @@ export const EditFormMain: FC<EditFormMainProps> = memo((props) => {
         register,
         handleSubmit,
         watch,
-        formState: { errors, isValid, dirtyFields },
+        formState: { errors, dirtyFields },
     } = useForm<EditFormMainSchema>({
         resolver: yupResolver(schema),
         mode: "all",
@@ -72,12 +72,8 @@ export const EditFormMain: FC<EditFormMainProps> = memo((props) => {
         [dispatch]
     );
 
-    const onClick = useCallback(() => {
-        navigate(PathRoutes.CREATE_1, {
-            state: {
-                create: "1",
-            },
-        });
+    const onStart = useCallback(() => {
+        navigate(PathRoutes.CREATE);
     }, [navigate]);
 
     const { name, onBlur, ref, onChange } = register("phone");
@@ -118,9 +114,8 @@ export const EditFormMain: FC<EditFormMainProps> = memo((props) => {
             />
             <Button
                 theme="filling"
-                isDisabled={!isValid}
                 type="submit"
-                onClick={onClick}
+                onClick={onStart}
             >
                 Начать
             </Button>
