@@ -7,7 +7,7 @@ export interface DropdownProps<T extends string, K extends string> {
     className?: string;
     options: SelectOptions<T, K>[];
     defaultValue?: T;
-    value?: T;
+    value?: SelectOptions<T, K>;
     onChange?: VoidFunction;
     onBlur?: VoidFunction;
     placeholder?: string;
