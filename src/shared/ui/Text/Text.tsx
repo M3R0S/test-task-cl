@@ -1,10 +1,9 @@
-import { FC } from "react";
 import classNames from "classnames";
 
 import cl from "./Text.module.scss";
 import { TextProps } from "./Text.types";
 
-export const Text: FC<TextProps> = (props) => {
+export const Text = (props: TextProps) => {
     const {
         className,
         children,
@@ -23,4 +22,3 @@ export const Text: FC<TextProps> = (props) => {
         </Tag>
     );
 };
-
