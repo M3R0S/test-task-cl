@@ -21,6 +21,8 @@ const Dropdown = <T extends string, K extends string>(props: DropdownProps<T, K>
         label,
         isDirty,
         onBlur,
+        value,
+        defaultValue,
     } = props;
 
     return (
@@ -36,12 +38,18 @@ const Dropdown = <T extends string, K extends string>(props: DropdownProps<T, K>
                 </Text>
             )}
             <Select
-                openMenuOnFocus
+                value={value || defaultValue}
                 name={name}
+                openMenuOnFocus
                 id={name}
+                ref={ref}
                 unstyled
                 isSearchable={false}
                 onBlur={onBlur}
+                onChange={onChange}
+                options={options}
+                placeholder={placeholder}
+                className={classNames(cl.dropdown, className)}
                 classNames={{
                     option: (state) => classNames(cl.option, { [cl.focus]: state.isFocused }),
                     container: (state) =>
@@ -60,11 +68,6 @@ const Dropdown = <T extends string, K extends string>(props: DropdownProps<T, K>
                     menuList: () => cl.menu_list,
                     singleValue: () => cl.value,
                 }}
-                onChange={onChange}
-                options={options}
-                placeholder={placeholder}
-                className={classNames(cl.dropdown, className)}
-                ref={ref}
             />
             {isValidate && (
                 <Text

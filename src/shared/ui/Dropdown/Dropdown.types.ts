@@ -6,7 +6,7 @@ export interface SelectOptions<T, K> {
 export interface DropdownProps<T extends string, K extends string> {
     className?: string;
     options: SelectOptions<T, K>[];
-    defaultValue?: T;
+    defaultValue?: SelectOptions<T, K>;
     value?: SelectOptions<T, K>;
     onChange?: VoidFunction;
     onBlur?: VoidFunction;
