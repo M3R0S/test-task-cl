@@ -1,0 +1,35 @@
+.textarea {
+    outline: none;
+    border: 0.1rem solid var(--color-black-16);
+    border-radius: 0.4rem;
+    padding: 1.2rem;
+    min-width: 68rem;
+    min-height: 8.4rem;
+    max-width: 68rem;
+    max-height: 20rem;
+    font: var(--font-14-400-20);
+    color: var(--color-primary);
+    transition: all var(--transition-timeout-200);
+
+    &::placeholder {
+        color: var(--color-black-48);
+    }
+
+    &:hover,
+    &:focus {
+        border: 0.1rem solid var(--color-purple);
+    }
+
+    &.valid.valid {
+        border: 0.1rem solid var(--color-green);
+    }
+
+    &.not_valid.not_valid {
+        border: 0.1rem solid var(--color-red);
+    }
+}
+
+.text {
+    height: 1.6rem;
+    cursor: help;
+}
