@@ -1,7 +1,6 @@
 import { FC, memo } from "react";
 import classNames from "classnames";
 import { useForm, Controller } from "react-hook-form";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
 
@@ -12,57 +11,26 @@ import {
     getFormNickname,
     getFormSex,
     getFormSurname,
-} from "../../model/selectors/getForm";
-import { editFormActions } from "../../model/slice/editFormSlice";
+} from "../../model/selectors/getFormCreate";
+import { editFormActions } from "../../model/slice/editFormCreateSlice";
+import { EditFormCreateOneSchema } from "./EditFormCreateOne.schema";
 import { ButtonsControlStep } from "../ButtonsControlStep/ButtonsControlStep";
 
-import { Sex, SexSelect, SexSelectOption } from "entities/Sex";
-import { ValidationMessage } from "shared/config/validation/validationMessage";
+import { SexSelect } from "entities/Sex";
 import { useAppDispatch, useAppSelector } from "shared/lib/hooks/useStore";
 import { VStack } from "shared/ui/Stack";
 import { Input } from "shared/ui/Input";
 
-const schema = yup
-    .object({
-        nickname: yup
-            .string()
-            .required(ValidationMessage.required)
-            .matches(/^[a-zA-Z0-9]+$/, ValidationMessage.nickname)
-            .max(30, ValidationMessage.nicknameMaxLength),
-        name: yup
-            .string()
-            .required(ValidationMessage.required)
-            .max(50, ValidationMessage.nameMaxLength)
-            .matches(/^[a-zA-Zа-яА-Я]+$/, ValidationMessage.name),
-        surname: yup
-            .string()
-            .required(ValidationMessage.required)
-            .max(50, ValidationMessage.surnameMaxLength)
-            .matches(/^[a-zA-Zа-яА-Я]+$/, ValidationMessage.surname),
-        sex: yup.object({
-            value: yup.mixed<keyof typeof Sex>().required(ValidationMessage.required),
-            label: yup.mixed<Sex>().required(ValidationMessage.required),
-        }),
-    })
-    .required();
-export type EditFormCreateOneSchema = yup.InferType<typeof schema>;
-
 export const EditFormCreateOne: FC<EditFormCreateOneProps> = memo((props) => {
     const { className, setPageNumber } = props;
+
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
     const name = useAppSelector(getFormName);
     const surname = useAppSelector(getFormSurname);
     const nickname = useAppSelector(getFormNickname);
     const sex = useAppSelector(getFormSex);
-    const sexOption: SexSelectOption | undefined = sex
-        ? {
-              label: Sex[sex],
-              value: sex,
-          }
-        : undefined;
-
-    const dispatch = useAppDispatch();
-    const navigate = useNavigate();
 
     const {
         register,
@@ -70,13 +38,13 @@ export const EditFormCreateOne: FC<EditFormCreateOneProps> = memo((props) => {
         control,
         formState: { dirtyFields, errors },
     } = useForm<EditFormCreateOneSchema>({
-        resolver: yupResolver(schema),
+        resolver: yupResolver(EditFormCreateOneSchema),
         mode: "all",
         defaultValues: {
             name: name,
             nickname: nickname,
             surname: surname,
-            sex: sexOption,
+            sex: sex,
         },
     });
 

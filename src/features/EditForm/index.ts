@@ -1,5 +1,6 @@
-export { EditForm } from "./ui/EditForm/EditForm";
+export { EditFormCreate } from "./ui/EditFormCreate/EditFormCreate";
 
-export { editFormSlice } from "./model/slice/editFormSlice";
+export { editFormCreateSlice } from "./model/slice/editFormCreateSlice";
 
-export type { EditFormCreatePageNumber } from "./ui/EditForm/EditForm.types"
+export type { EditFormCreatePageNumber } from "./ui/EditFormCreate/EditFormCreate.types";
+

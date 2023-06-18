@@ -1,15 +1,10 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { EditFormMainSchema } from "../../ui/EditFormMain/EditFormMain";
-import { EditFormCreateOneSchema } from "../../ui/EditFormCreateOne/EditFormCreateOne";
 import { EditFormCreateTwoSchema } from "../../ui/EditFormCreateTwo/EditFormCreateTwo";
-import { EditFormState } from "../types/editFormState";
+import { EditFormCreateOneSchema } from "../../ui/EditFormCreateOne/EditFormCreateOne.schema";
+import { EditFormCreateState } from "../types/editFormCreateState";
 
-import { normalizePhone } from "shared/lib/helpers/normalizePhone";
-
-const initialState: EditFormState = {
-    phone: "+79787790823",
-    email: "bogdan_yalta@mail.ru",
+const initialState: EditFormCreateState = {
     name: "",
     nickname: "",
     surname: "",
@@ -19,14 +14,10 @@ const initialState: EditFormState = {
     radio: 0,
 };
 
-export const editFormSlice = createSlice({
-    name: "editForm",
+export const editFormCreateSlice = createSlice({
+    name: "editFormCreate",
     initialState,
     reducers: {
-        setFormMain: (state, action: PayloadAction<EditFormMainSchema>) => {
-            state.email = action.payload.email;
-            state.phone = normalizePhone(action.payload.phone);
-        },
         setFormCreateOne: (state, action: PayloadAction<EditFormCreateOneSchema>) => {
             state.name = action.payload.name;
             state.surname = action.payload.surname;
@@ -45,4 +36,4 @@ export const editFormSlice = createSlice({
     },
 });
 
-export const editFormActions = editFormSlice.actions;
+export const editFormActions = editFormCreateSlice.actions;

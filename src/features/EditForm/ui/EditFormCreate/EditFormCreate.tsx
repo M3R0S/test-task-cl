@@ -1,18 +1,13 @@
 import { FC, memo } from "react";
 
-import { EditFormProps } from "./EditForm.types";
-import { EditFormMain } from "../EditFormMain/EditFormMain";
+import { EditFormCreateProps } from "./EditFormCreate.types";
 import { EditFormCreateOne } from "../EditFormCreateOne/EditFormCreateOne";
 import { EditFormCreateTwo } from "../EditFormCreateTwo/EditFormCreateTwo";
 
-export const EditForm: FC<EditFormProps> = memo((props) => {
-    const { form, className, setPageNumber } = props;
+export const EditFormCreate: FC<EditFormCreateProps> = memo((props) => {
+    const { page, className, setPageNumber } = props;
 
-    if (form === "main") {
-        return <EditFormMain className={className} />;
-    }
-
-    if (form === "create1") {
+    if (page === "1") {
         return (
             <EditFormCreateOne
                 setPageNumber={setPageNumber}
@@ -21,7 +16,7 @@ export const EditForm: FC<EditFormProps> = memo((props) => {
         );
     }
 
-    if (form === "create2") {
+    if (page === "2") {
         return (
             <EditFormCreateTwo
                 setPageNumber={setPageNumber}

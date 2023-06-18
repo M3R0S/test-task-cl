@@ -1,14 +1,19 @@
 import { FC, memo, useState } from "react";
 import classNames from "classnames";
-import * as yup from "yup";
 import { useFieldArray, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import cl from "./EditFormCreateTwo.module.scss";
 import { EditFormCreateTwoProps } from "./EditFormCreateTwo.types";
-import { editFormActions } from "../../model/slice/editFormSlice";
-import { getFormAdvantages, getFormCheckBox, getFormRadio } from "../../model/selectors/getForm";
+import { editFormActions } from "../../model/slice/editFormCreateSlice";
+import {
+    getFormAdvantages,
+    getFormCheckBox,
+    getFormRadio,
+} from "../../model/selectors/getFormCreate";
+import { EditFormCreateTwoSchema } from "./EditFormCreateTwo.schema";
+import { defaultCheckBoxOptions, defaultRadioOptions } from "./EditFormCreateTwo.const";
 import { ButtonsControlStep } from "../ButtonsControlStep/ButtonsControlStep";
 
 import { ReactComponent as PlusSvg } from "shared/assets/svg/Plus.svg";
@@ -20,61 +25,8 @@ import { Input } from "shared/ui/Input";
 import { Button } from "shared/ui/Button";
 import { Text } from "shared/ui/Text";
 import { Svg } from "shared/ui/Svg";
-import { CheckBoxGroup, CheckBoxGroupOption } from "shared/ui/CheckBoxGroup";
-import { RadioGroup, RadioGroupOption } from "shared/ui/RadioGroup";
-
-const schema = yup
-    .object({
-        advantages: yup
-            .array(
-                yup
-                    .object({
-                        advantage: yup.string(),
-                    })
-                    .required()
-            )
-            .required(),
-        checkBoxGroup: yup.array(yup.string()),
-        radioGroup: yup.string(),
-    })
-    .required();
-export type EditFormCreateTwoSchema = yup.InferType<typeof schema>;
-
-const defaultCheckBoxOptions: CheckBoxGroupOption<number>[] = [
-    {
-        value: 1,
-        label: "1",
-        id: "field-checkbox-group-option-1",
-    },
-    {
-        value: 2,
-        label: "2",
-        id: "field-checkbox-group-option-2",
-    },
-    {
-        value: 3,
-        label: "3",
-        id: "field-checkbox-group-option-3",
-    },
-];
-
-const defaultRadioOptions: RadioGroupOption<number>[] = [
-    {
-        value: 1,
-        label: "1",
-        id: "field-radio-group-option-1",
-    },
-    {
-        value: 2,
-        label: "2",
-        id: "field-radio-group-option-2",
-    },
-    {
-        value: 3,
-        label: "3",
-        id: "field-radio-group-option-3",
-    },
-];
+import { CheckBoxGroup } from "shared/ui/CheckBoxGroup";
+import { RadioGroup } from "shared/ui/RadioGroup";
 
 export const EditFormCreateTwo: FC<EditFormCreateTwoProps> = memo((props) => {
     const { className, setPageNumber } = props;
@@ -82,8 +34,8 @@ export const EditFormCreateTwo: FC<EditFormCreateTwoProps> = memo((props) => {
     const dispatch = useAppDispatch();
 
     const advantages = useAppSelector(getFormAdvantages);
-    const checkBox = useAppSelector(getFormCheckBox);
-    const radio = useAppSelector(getFormRadio);
+    const checkBoxGroup = useAppSelector(getFormCheckBox);
+    const radioGroup = useAppSelector(getFormRadio);
 
     const {
         register,
@@ -92,11 +44,11 @@ export const EditFormCreateTwo: FC<EditFormCreateTwoProps> = memo((props) => {
         formState: { dirtyFields },
         handleSubmit,
     } = useForm<EditFormCreateTwoSchema>({
-        resolver: yupResolver(schema),
+        resolver: yupResolver(EditFormCreateTwoSchema),
         defaultValues: {
-            advantages: advantages.map((advantage) => ({ advantage: advantage })),
-            radioGroup: String(radio),
-            checkBoxGroup: checkBox.map((checkBox) => String(checkBox)),
+            advantages,
+            radioGroup,
+            checkBoxGroup,
         },
         mode: "all",
     });
@@ -108,7 +60,6 @@ export const EditFormCreateTwo: FC<EditFormCreateTwoProps> = memo((props) => {
     const { handleMouseEnter, handleMouseLeave, isHover } = useHoverArray(
         advantagesMethods.fields.length
     );
-
     const [animationLengthFields, setAnimationLengthFields] = useState<number>(
         advantagesMethods.fields.length
     );

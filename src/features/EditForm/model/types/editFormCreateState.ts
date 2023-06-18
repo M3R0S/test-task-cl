@@ -1,8 +1,6 @@
 import { SexKey } from "entities/Sex";
 
-export interface EditFormState {
-    phone: string;
-    email: string;
+export interface EditFormCreateState {
     nickname: string;
     name: string;
     surname: string;

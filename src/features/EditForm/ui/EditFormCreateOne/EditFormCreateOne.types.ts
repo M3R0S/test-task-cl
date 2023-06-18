@@ -1,4 +1,4 @@
-import { EditFormCreatePageNumber } from "../EditForm/EditForm.types";
+import { EditFormCreatePageNumber } from "../EditFormCreate/EditFormCreate.types";
 
 export interface EditFormCreateOneProps {
     className?: string;

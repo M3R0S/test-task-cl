@@ -1,59 +1,41 @@
-import { FC, memo, FormHTMLAttributes, useCallback } from "react";
+import { FC, memo, useCallback } from "react";
 import classNames from "classnames";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import { useIMask } from "react-imask";
-import { useNavigate } from "react-router-dom";
 
-import cl from "./EditFormMain.module.scss";
-import { EditFormMainProps } from "./EditFormMain.types";
-import { getFormEmail, getFormPhone } from "../../model/selectors/getForm";
-import { editFormActions } from "../../model/slice/editFormSlice";
+import cl from "./EditProfileContacts.module.scss";
+import { EditProfileContactsSchema } from "./EditProfileContacts.schema";
+import { EditProfileContactsProps } from "./EditProfileContacts.types";
+import {
+    getProfileContactsEmail,
+    getProfileContactsPhone,
+} from "../../model/selectors/getProfileContacts";
+import { editProfileContactsActions } from "../../model/slice/editProfileContactsSlice";
 
-import { ValidationMessage } from "shared/config/validation/validationMessage";
 import { PathRoutes } from "shared/config/router/pathRoutes";
 import { useAppDispatch, useAppSelector } from "shared/lib/hooks/useStore";
+import { VStack } from "shared/ui/Stack";
 import { Input } from "shared/ui/Input";
 import { Button } from "shared/ui/Button";
-import { VStack } from "shared/ui/Stack";
 
-const phoneRegExp =
-    /(\+7|8)[- _]*\(?[- _]*(\d{3}[- _]*\)?([- _]*\d){7}|\d\d[- _]*\d\d[- _]*\)?([- _]*\d){6})/g;
-
-const emailRegExp =
-    /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-
-const schema = yup
-    .object({
-        phone: yup
-            .string()
-            .required(ValidationMessage.required)
-            .matches(phoneRegExp, ValidationMessage.phone),
-        email: yup
-            .string()
-            .required(ValidationMessage.required)
-            .matches(emailRegExp, ValidationMessage.email),
-    })
-    .required();
-export type EditFormMainSchema = yup.InferType<typeof schema>;
-
-export const EditFormMain: FC<EditFormMainProps> = memo((props) => {
+export const EditProfileContacts: FC<EditProfileContactsProps> = memo((props) => {
     const { className } = props;
 
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
-    const email = useAppSelector(getFormEmail);
-    const phone = useAppSelector(getFormPhone);
+    const email = useAppSelector(getProfileContactsEmail);
+    const phone = useAppSelector(getProfileContactsPhone);
 
     const {
         register,
         handleSubmit,
         watch,
         formState: { errors, dirtyFields },
-    } = useForm<EditFormMainSchema>({
-        resolver: yupResolver(schema),
+    } = useForm<EditProfileContactsSchema>({
+        resolver: yupResolver(EditProfileContactsSchema),
         mode: "all",
         defaultValues: {
             email,
@@ -66,8 +48,8 @@ export const EditFormMain: FC<EditFormMainProps> = memo((props) => {
     });
 
     const onSubmit = useCallback(
-        (data: EditFormMainSchema) => {
-            dispatch(editFormActions.setFormMain(data));
+        (data: EditProfileContactsSchema) => {
+            dispatch(editProfileContactsActions.setProfileContacts(data));
         },
         [dispatch]
     );
@@ -79,10 +61,10 @@ export const EditFormMain: FC<EditFormMainProps> = memo((props) => {
     const { name, onBlur, ref, onChange } = register("phone");
 
     return (
-        <VStack<FormHTMLAttributes<HTMLFormElement>>
+        <VStack
             Tag="form"
             onSubmit={handleSubmit(onSubmit)}
-            className={classNames(cl.edit_form_main, className)}
+            className={classNames(cl.edit_profile_contacts, className)}
             gap="24"
             alignItems="start"
         >
