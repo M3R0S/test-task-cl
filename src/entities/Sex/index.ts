@@ -1,3 +1,7 @@
-export { SexSelect } from "./ui/SexSelect/SexSelect"
+export { SexSelect } from "./ui/SexSelect/SexSelect";
 
-export { Sex } from "./model/types/sexState"
+export type { SexSelectOption } from "./ui/SexSelect/SexSelect.types";
+export type { SexKey } from "./model/types/sexState";
+
+export { Sex } from "./model/types/sexState";
+

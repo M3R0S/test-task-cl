@@ -4,4 +4,5 @@ export const Sex = {
 } as const;
 
 export type Sex = ValueOf<typeof Sex>;
+export type SexKey = keyof typeof Sex;
 

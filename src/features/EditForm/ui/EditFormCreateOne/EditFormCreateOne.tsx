@@ -15,7 +15,7 @@ import {
 } from "../../model/selectors/getForm";
 import { editFormActions } from "../../model/slice/editFormSlice";
 
-import { Sex, SexSelect } from "entities/Sex";
+import { Sex, SexSelect, SexSelectOption } from "entities/Sex";
 import { ValidationMessage } from "shared/config/validation/validationMessage";
 import { useAppDispatch, useAppSelector } from "shared/lib/hooks/useStore";
 import { HStack, VStack } from "shared/ui/Stack";
@@ -54,6 +54,12 @@ export const EditFormCreateOne: FC<EditFormCreateOneProps> = memo((props) => {
     const surname = useAppSelector(getFormSurname);
     const nickname = useAppSelector(getFormNickname);
     const sex = useAppSelector(getFormSex);
+    const sexOption: SexSelectOption | undefined = sex
+        ? {
+              label: Sex[sex],
+              value: sex,
+          }
+        : undefined;
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
@@ -70,20 +76,21 @@ export const EditFormCreateOne: FC<EditFormCreateOneProps> = memo((props) => {
             name: name,
             nickname: nickname,
             surname: surname,
-            sex: sex,
+            sex: sexOption,
         },
     });
 
-    const onSubmit = (data: EditFormCreateOneSchema) => {
-        dispatch(editFormActions.setFormCreateOne(data));
-    };
-
     const onNext = () => {
-        setPageNumber?.("2")
+        setPageNumber?.("2");
     };
 
     const onBack = () => {
         navigate(-1);
+    };
+
+    const onSubmit = (data: EditFormCreateOneSchema) => {
+        dispatch(editFormActions.setFormCreateOne(data));
+        onNext();
     };
 
     return (
@@ -141,7 +148,6 @@ export const EditFormCreateOne: FC<EditFormCreateOneProps> = memo((props) => {
                 <Button
                     type="submit"
                     theme="filling"
-                    onClick={onNext}
                 >
                     Далее
                 </Button>

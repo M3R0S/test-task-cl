@@ -1,14 +1,14 @@
 import { Sex } from "../../model/types/sexState";
 
-export interface SexSelectValue {
+export interface SexSelectOption {
     value: keyof typeof Sex;
     label: Sex;
 }
 
 export interface SexSelectProps {
     className?: string;
-    defaultValue?: SexSelectValue;
-    value?: SexSelectValue;
+    defaultValue?: SexSelectOption;
+    value?: SexSelectOption;
     isDirty?: boolean;
     onChange?: VoidFunction;
     onBlur?: VoidFunction;
