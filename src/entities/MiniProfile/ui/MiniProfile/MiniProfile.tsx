@@ -7,6 +7,7 @@ import { MiniProfileLinks, MiniProfileProps } from "./MiniProfile.types";
 import AvatarImg from "shared/assets/image/Avatar.png";
 import { ReactComponent as FolderSvg } from "shared/assets/svg/Folder.svg";
 import { useScreenSize } from "shared/lib/hooks/useScreenSize";
+import { useHoverArray } from "shared/lib/hooks/useHover";
 import { Avatar } from "shared/ui/Avatar";
 import { HStack, Stack, VStack } from "shared/ui/Stack";
 import { Text } from "shared/ui/Text";
@@ -44,6 +45,8 @@ export const MiniProfile: FC<MiniProfileProps> = memo((props) => {
 
     const { screenWidth } = useScreenSize();
 
+    const { isHover: isHoverAppLink, handleMouseEnter, handleMouseLeave } = useHoverArray(3);
+
     return (
         <HStack
             Tag="header"
@@ -69,15 +72,20 @@ export const MiniProfile: FC<MiniProfileProps> = memo((props) => {
                     direction={screenWidth >= 400 ? "row" : "column"}
                     gap="16"
                 >
-                    {miniProfileLinks.map(({ id, src, title }) => (
+                    {miniProfileLinks.map(({ id, src, title }, index) => (
                         <AppLink
                             gap="4"
                             theme="clear"
                             size="12"
                             key={id}
                             to={src}
+                            onMouseEnter={handleMouseEnter(index)}
+                            onMouseLeave={handleMouseLeave(index)}
                         >
-                            <Svg Svg={FolderSvg} />
+                            <Svg
+                                theme={isHoverAppLink[index] ? "purple" : "grey"}
+                                Svg={FolderSvg}
+                            />
                             {title}
                         </AppLink>
                     ))}
