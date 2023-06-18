@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
-import { SharedGap, SharedSize, SharedTheme } from "../shared/shared.types";
+import { SharedGap, SharedSize, SharedTheme, SharedType } from "../shared/shared.types";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
@@ -9,4 +9,5 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: SharedSize;
     gap?: SharedGap;
     isDisabled?: boolean
+    themeType?: SharedType
 }
