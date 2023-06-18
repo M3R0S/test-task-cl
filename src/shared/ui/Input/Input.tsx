@@ -16,6 +16,8 @@ export const Input = memo(
             isValidate = true,
             isDirty = false,
             name,
+            inputSize = "300",
+            isDisabled,
             ...otherProps
         } = props;
 
@@ -37,9 +39,11 @@ export const Input = memo(
                     name={name}
                     id={name}
                     ref={ref}
-                    className={classNames(cl.input, className, cl[theme], {
-                        [cl.valid]: isValid && isDirty,
-                        [cl.not_valid]: !isValid,
+                    disabled={isDisabled}
+                    className={classNames(cl.input, className, cl[theme], cl[`size_${inputSize}`], {
+                        [cl.valid]: isValid && isDirty && !isDisabled,
+                        [cl.not_valid]: !isValid && !isDisabled,
+                        [cl.disabled]: isDisabled,
                     })}
                     {...otherProps}
                 />

@@ -2,8 +2,7 @@
     outline: none;
     transition: all var(--transition-timeout-200);
 
-    &.primary,
-    &.secondary {
+    &.primary {
         border: 0.1rem solid var(--color-black-16);
         border-radius: 0.4rem;
         padding: 1.2rem;
@@ -13,25 +12,23 @@
         &::placeholder {
             color: var(--color-black-48);
         }
-    }
 
-    &.primary {
-        width: 27.4rem;
-
-        &:hover,
-        &:focus {
+        &:hover:not(:disabled),
+        &:focus:not(:disabled) {
             border: 0.1rem solid var(--color-purple);
         }
     }
 
-    &.secondary {
-        width: 37.4rem;
+    &.disabled {
         background: var(--color-black-4);
+    }
 
-        &:hover,
-        &:focus {
-            border: 0.1rem solid var(--color-purple);
-        }
+    &.size_300 {
+        width: 27.4rem;
+    }
+
+    &.size_400 {
+        width: 37.4rem;
     }
 
     &.valid.valid {
@@ -49,16 +46,15 @@
 
 @media (width <= 530px) {
     .input {
-        &.secondary {
+        &.size_400 {
             width: 20rem;
-            background: var(--color-black-4);
         }
     }
 }
 
 @media (width <= 450px) {
     .input {
-        &.primary {
+        &.size_300 {
             width: 20rem;
         }
     }

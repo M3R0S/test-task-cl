@@ -74,7 +74,6 @@ export const EditProfileContacts: FC<EditProfileContactsProps> = memo((props) =>
                     ref(el);
                     maskRef.current = el;
                 }}
-                theme="secondary"
                 label="Номер телефона"
                 validateMessage={errors.phone?.message}
                 isDirty={value !== phone && value !== ""}
@@ -83,9 +82,10 @@ export const EditProfileContacts: FC<EditProfileContactsProps> = memo((props) =>
                 onBlur={onBlur}
                 placeholder="+7 (900) 000-00-00"
                 autoComplete="phone"
+                isDisabled={true}
+                inputSize="400"
             />
             <Input
-                theme="secondary"
                 {...register("email")}
                 label="Email"
                 validateMessage={errors.email?.message}
@@ -93,6 +93,8 @@ export const EditProfileContacts: FC<EditProfileContactsProps> = memo((props) =>
                 type="email"
                 placeholder="tim.jennings@example.com"
                 autoComplete="email"
+                isDisabled={true}
+                inputSize="400"
             />
             <Button
                 theme="filling"
