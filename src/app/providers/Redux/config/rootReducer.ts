@@ -1,4 +1,4 @@
-import { editFormCreateSlice } from "features/EditForm";
+import { editFormCreateSlice } from "features/EditFormCreate";
 import { editProfileContactsSlice } from "features/EditProfileContacts";
 import { rtkApi } from "shared/api/rtkApi";
 

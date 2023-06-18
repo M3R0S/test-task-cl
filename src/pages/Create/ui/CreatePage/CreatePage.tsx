@@ -5,7 +5,7 @@ import cl from "./CreatePage.module.scss";
 import { CreatePageProps } from "./CreatePage.types";
 
 import { Page } from "widgets/Page";
-import { EditFormCreate, EditFormCreatePageNumber } from "features/EditForm";
+import { EditFormCreate, EditFormCreatePageNumber } from "features/EditFormCreate";
 import { Stepper } from "features/Stepper";
 import { VStack } from "shared/ui/Stack";
 
