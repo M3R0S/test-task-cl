@@ -1,0 +1,50 @@
+.send_form_modal {
+    height: 31.4rem;
+
+    .close {
+        border-radius: 50%;
+        width: 2.8rem;
+        height: 2.8rem;
+        background: var(--color-black-4);
+        transition: background var(--transition-timeout-200);
+
+        &:hover {
+            background: var(--color-black-8);
+        }
+    }
+
+    .closed {
+        align-self: flex-end;
+    }
+
+    .svg_wrapper {
+        height: 8rem;
+
+        .svg_outline {
+            border-radius: 50%;
+            width: 8rem;
+            height: 8rem;
+            animation: svg-open var(--transition-timeout-500);
+
+            &.success {
+                background: var(--color-green-15);
+            }
+
+            &.cancel {
+                background: var(--color-red-15);
+            }
+        }
+    }
+}
+
+@keyframes svg-open {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    100% {
+        width: 8rem;
+        height: 8rem;
+    }
+}
