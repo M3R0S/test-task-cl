@@ -8,7 +8,7 @@ import { HStack } from "shared/ui/Stack";
 import { Button } from "shared/ui/Button";
 
 export const ButtonsControlStep: FC<ButtonsControlStepProps> = memo((props) => {
-    const { className, onBack } = props;
+    const { className, onBack, step } = props;
 
     return (
         <HStack
@@ -23,13 +23,23 @@ export const ButtonsControlStep: FC<ButtonsControlStepProps> = memo((props) => {
             >
                 Назад
             </Button>
-            <Button
-                id="button-next"
-                type="submit"
-                theme="filling"
-            >
-                Далее
-            </Button>
+            {step === "3" ? (
+                <Button
+                    id="button-send"
+                    type="submit"
+                    theme="filling"
+                >
+                    Отправить
+                </Button>
+            ) : (
+                <Button
+                    id="button-next"
+                    type="submit"
+                    theme="filling"
+                >
+                    Далее
+                </Button>
+            )}
         </HStack>
     );
 });

@@ -1,7 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { EditFormCreateTwoSchema } from "../../ui/EditFormCreateTwo/EditFormCreateTwo";
+import { EditFormCreateTwoSchema } from "../../ui/EditFormCreateTwo/EditFormCreateTwo.schema";
 import { EditFormCreateOneSchema } from "../../ui/EditFormCreateOne/EditFormCreateOne.schema";
+import { EditFormCreateThreeSchema } from "../../ui/EditFormCreateThree/EditFormCreateThree.schema";
 import { EditFormCreateState } from "../types/editFormCreateState";
 
 const initialState: EditFormCreateState = {
@@ -12,6 +13,7 @@ const initialState: EditFormCreateState = {
     advantages: ["", "", ""],
     checkBox: [],
     radio: 0,
+    about: "",
 };
 
 export const editFormCreateSlice = createSlice({
@@ -32,6 +34,9 @@ export const editFormCreateSlice = createSlice({
                 state.checkBox = [];
             }
             state.radio = Number(action.payload.radioGroup);
+        },
+        setFormCreateThree: (state, action: PayloadAction<EditFormCreateThreeSchema>) => {
+            state.about = action.payload.about;
         },
     },
 });

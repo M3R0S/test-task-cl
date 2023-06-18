@@ -22,7 +22,7 @@ import { VStack } from "shared/ui/Stack";
 import { Input } from "shared/ui/Input";
 
 export const EditFormCreateOne: FC<EditFormCreateOneProps> = memo((props) => {
-    const { className, setPageNumber } = props;
+    const { className, setPageNumber, step } = props;
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
@@ -49,7 +49,7 @@ export const EditFormCreateOne: FC<EditFormCreateOneProps> = memo((props) => {
     });
 
     const onNext = () => {
-        setPageNumber?.("2");
+        setPageNumber("2");
     };
 
     const onBack = () => {
@@ -105,7 +105,10 @@ export const EditFormCreateOne: FC<EditFormCreateOneProps> = memo((props) => {
                     )}
                 />
             </VStack>
-            <ButtonsControlStep onBack={onBack} />
+            <ButtonsControlStep
+                onBack={onBack}
+                step={step}
+            />
         </VStack>
     );
 });

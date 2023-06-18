@@ -5,26 +5,26 @@ import cl from "./CreatePage.module.scss";
 import { CreatePageProps } from "./CreatePage.types";
 
 import { Page } from "widgets/Page";
-import { EditFormCreate, EditFormCreatePageNumber } from "features/EditFormCreate";
+import { EditFormCreate, EditFormCreateStep } from "features/EditFormCreate";
 import { Stepper } from "features/Stepper";
 import { VStack } from "shared/ui/Stack";
 
 const CreatePage: FC<CreatePageProps> = (props) => {
     const { className } = props;
 
-    const [pageNumber, setPageNumber] = useState<EditFormCreatePageNumber>("1");
+    const [step, setStep] = useState<EditFormCreateStep>("1");
 
-    const setPageNumberHandler = (pageNumber: EditFormCreatePageNumber) => {
-        setPageNumber(pageNumber);
+    const setStepHandler = (pageNumber: EditFormCreateStep) => {
+        setStep(pageNumber);
     };
 
     return (
         <Page className={classNames(cl.create_page, className)}>
             <VStack rowGap="64">
-                <Stepper activeDot={pageNumber} />
+                <Stepper activeDot={step} />
                 <EditFormCreate
-                    page={pageNumber}
-                    setPageNumber={setPageNumberHandler}
+                    step={step}
+                    setPageNumber={setStepHandler}
                 />
             </VStack>
         </Page>

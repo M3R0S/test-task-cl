@@ -1,8 +1,8 @@
-export type EditFormCreatePageNumber = "1" | "2" | "3";
+export type EditFormCreateStep = "1" | "2" | "3";
 
 export interface EditFormCreateProps {
-    page: EditFormCreatePageNumber;
-    setPageNumber?: (pageNumber: EditFormCreatePageNumber) => void;
+    step: EditFormCreateStep;
+    setPageNumber: (pageNumber: EditFormCreateStep) => void;
     className?: string;
 }
 

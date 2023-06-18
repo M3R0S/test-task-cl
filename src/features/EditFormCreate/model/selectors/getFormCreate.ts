@@ -23,4 +23,6 @@ export const getFormCheckBox = createSelector(getFormCreate, (form) =>
     form.checkBox.map((checkBox) => String(checkBox))
 );
 export const getFormRadio = createSelector(getFormCreate, (form) => String(form.radio));
+export const getFormAbout = createSelector(getFormCreate, (form) => form.about);
+
 

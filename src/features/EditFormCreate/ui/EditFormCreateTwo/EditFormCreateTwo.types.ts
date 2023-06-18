@@ -1,8 +1,9 @@
-import { EditFormCreatePageNumber } from "../EditFormCreate/EditFormCreate.types";
+import { EditFormCreateStep } from "../EditFormCreate/EditFormCreate.types";
 
 export interface EditFormCreateTwoProps {
     className?: string;
-    setPageNumber?: (pageNumber: EditFormCreatePageNumber) => void;
+    setPageNumber: (pageNumber: EditFormCreateStep) => void;
+    step: EditFormCreateStep
 }
 
 export interface EditFormCreateAdvantage {

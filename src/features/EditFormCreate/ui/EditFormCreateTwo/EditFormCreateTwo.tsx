@@ -29,7 +29,7 @@ import { CheckBoxGroup } from "shared/ui/CheckBoxGroup";
 import { RadioGroup } from "shared/ui/RadioGroup";
 
 export const EditFormCreateTwo: FC<EditFormCreateTwoProps> = memo((props) => {
-    const { className, setPageNumber } = props;
+    const { className, setPageNumber, step } = props;
 
     const dispatch = useAppDispatch();
 
@@ -65,11 +65,11 @@ export const EditFormCreateTwo: FC<EditFormCreateTwoProps> = memo((props) => {
     );
 
     const onNext = () => {
-        setPageNumber?.("3");
+        setPageNumber("3");
     };
 
     const onBack = () => {
-        setPageNumber?.("1");
+        setPageNumber("1");
     };
 
     const onAdd = () => {
@@ -186,7 +186,7 @@ export const EditFormCreateTwo: FC<EditFormCreateTwoProps> = memo((props) => {
                     {...register("radioGroup")}
                 />
             </VStack>
-            <ButtonsControlStep onBack={onBack} />
+            <ButtonsControlStep onBack={onBack} step={step} />
         </VStack>
     );
 });
