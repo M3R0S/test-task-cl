@@ -1,14 +1,14 @@
-import { RefCallBack, ChangeHandler } from "react-hook-form";
+import { ChangeHandler, RefCallBack } from "react-hook-form";
 
-export interface CheckBoxGroupOption<T> {
+export interface RadioGroupOption<T> {
     value?: T;
     label?: string;
     id?: string;
 }
 
-export interface CheckBoxGroupProps<T> {
+export interface RadioGroupProps<T> {
     className?: string;
-    options: CheckBoxGroupOption<T>[];
+    options: RadioGroupOption<T>[];
     label?: string;
     name: string;
     ref: RefCallBack;

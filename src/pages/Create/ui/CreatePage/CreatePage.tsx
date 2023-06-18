@@ -25,6 +25,7 @@ const CreatePage: FC<CreatePageProps> = (props) => {
                 <EditForm
                     className={cl.edit_form}
                     form={`create${pageNumber}`}
+                    // form={"create2"}
                     setPageNumber={setPageNumberHandler}
                 />
             </VStack>
