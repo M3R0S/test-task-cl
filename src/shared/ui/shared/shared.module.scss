@@ -64,6 +64,10 @@
             background: var(--color-white);
         }
     }
+
+    &.icon {
+        padding: 1.2rem;
+    }
 }
 
 .size_14 {
@@ -415,3 +419,4 @@
         row-gap: 8.6rem;
     }
 }
+

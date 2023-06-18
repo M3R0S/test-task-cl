@@ -1,0 +1,12 @@
+.svg {
+    transition: fill var(--transition-timeout-200);
+
+    &.grey {
+        fill: var(--color-grey);
+    }
+
+    &.purple {
+        fill: var(--color-purple);
+    }
+}
+
