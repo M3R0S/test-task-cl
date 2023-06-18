@@ -1,4 +1,4 @@
-import { FC, FormHTMLAttributes, memo } from "react";
+import { FC, memo } from "react";
 import classNames from "classnames";
 import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
@@ -14,13 +14,13 @@ import {
     getFormSurname,
 } from "../../model/selectors/getForm";
 import { editFormActions } from "../../model/slice/editFormSlice";
+import { ButtonsControlStep } from "../ButtonsControlStep/ButtonsControlStep";
 
 import { Sex, SexSelect, SexSelectOption } from "entities/Sex";
 import { ValidationMessage } from "shared/config/validation/validationMessage";
 import { useAppDispatch, useAppSelector } from "shared/lib/hooks/useStore";
-import { HStack, VStack } from "shared/ui/Stack";
+import { VStack } from "shared/ui/Stack";
 import { Input } from "shared/ui/Input";
-import { Button } from "shared/ui/Button";
 
 const schema = yup
     .object({
@@ -94,64 +94,50 @@ export const EditFormCreateOne: FC<EditFormCreateOneProps> = memo((props) => {
     };
 
     return (
-        <VStack<FormHTMLAttributes<HTMLFormElement>>
+        <VStack
             className={classNames(cl.edit_form_create_one, className)}
             Tag="form"
-            rowGap="24"
+            rowGap="64"
             onSubmit={handleSubmit(onSubmit)}
         >
-            <Input
-                {...register("nickname")}
-                theme="primary"
-                label="Ник"
-                placeholder="M3R0S"
-                validateMessage={errors.nickname?.message}
-                isDirty={dirtyFields.nickname}
-            />
-            <Input
-                {...register("name")}
-                theme="primary"
-                label="Имя"
-                placeholder="Богдан"
-                validateMessage={errors.name?.message}
-                isDirty={dirtyFields.name}
-            />
-            <Input
-                {...register("surname")}
-                theme="primary"
-                label="Фамилия"
-                placeholder="Москаленко"
-                validateMessage={errors.surname?.message}
-                isDirty={dirtyFields.surname}
-            />
-            <Controller
-                name="sex"
-                control={control}
-                render={({ field, fieldState }) => (
-                    <SexSelect
-                        validateMessage={errors.sex?.value?.message}
-                        isDirty={fieldState.isDirty}
-                        {...field}
-                    />
-                )}
-            />
-            <HStack
-                className={cl.btn_wrapper}
-                justifyContent="space_between"
-            >
-                <Button
-                    onClick={onBack}
-                    theme="without_filling"
-                >
-                    Назад
-                </Button>
-                <Button
-                    type="submit"
-                    theme="filling"
-                >
-                    Далее
-                </Button>
-            </HStack>
+            <VStack rowGap="24">
+                <Input
+                    {...register("nickname")}
+                    theme="primary"
+                    label="Ник"
+                    placeholder="M3R0S"
+                    validateMessage={errors.nickname?.message}
+                    isDirty={dirtyFields.nickname}
+                />
+                <Input
+                    {...register("name")}
+                    theme="primary"
+                    label="Имя"
+                    placeholder="Богдан"
+                    validateMessage={errors.name?.message}
+                    isDirty={dirtyFields.name}
+                />
+                <Input
+                    {...register("surname")}
+                    theme="primary"
+                    label="Фамилия"
+                    placeholder="Москаленко"
+                    validateMessage={errors.surname?.message}
+                    isDirty={dirtyFields.surname}
+                />
+                <Controller
+                    name="sex"
+                    control={control}
+                    render={({ field, fieldState }) => (
+                        <SexSelect
+                            validateMessage={errors.sex?.value?.message}
+                            isDirty={fieldState.isDirty}
+                            {...field}
+                        />
+                    )}
+                />
+            </VStack>
+            <ButtonsControlStep onBack={onBack} />
         </VStack>
     );
 });

@@ -1,0 +1,19 @@
+.edit_form_create_two {
+    .enter {
+        opacity: 0;
+    }
+
+    .enter_active {
+        opacity: 1;
+        transition: opacity var(--transition-timeout-500);
+    }
+
+    .exit {
+        opacity: 1;
+    }
+
+    .exit_active {
+        opacity: 0;
+        transition: opacity var(--transition-timeout-500);
+    }
+}

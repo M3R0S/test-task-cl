@@ -1,15 +1,14 @@
-import { EditFormCreateOneSchema } from "../../ui/EditFormCreateOne/EditFormCreateOne";
-import { EditFormMainSchema } from "../../ui/EditFormMain/EditFormMain";
+import { SexKey } from "entities/Sex";
 
-import { Sex } from "entities/Sex";
+export interface EditFormState {
+    phone: string;
+    email: string;
+    nickname: string;
+    name: string;
+    surname: string;
+    sex?: SexKey;
+    advantages: string[] | []
+    checkBox: number[] | []
+    radio: number | 0
+}
 
-// Костыль, чтобы обойти NonNullable тип у mixed() в yup и для нормализации валидации обязательного поля
-export type EditFormCreateOneSchemaNew = Omit<EditFormCreateOneSchema, "sex"> & {
-    sex?: {
-        value: keyof typeof Sex;
-        label: Sex;
-    };
-};
-
-// Объединение типов в основную State схему
-export type EditFormState = EditFormMainSchema & EditFormCreateOneSchemaNew;

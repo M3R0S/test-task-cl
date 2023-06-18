@@ -10,4 +10,7 @@ export const getFormNickname = createSelector(getForm, (form) => form.nickname);
 export const getFormName = createSelector(getForm, (form) => form.name);
 export const getFormSurname = createSelector(getForm, (form) => form.surname);
 export const getFormSex = createSelector(getForm, (form) => form.sex);
+export const getFormAdvantages = createSelector(getForm, (form) => form.advantages);
+export const getFormCheckBox = createSelector(getForm, (form) => form.checkBox);
+export const getFormRadio = createSelector(getForm, (form) => form.radio);
 
