@@ -79,3 +79,9 @@
 .text {
     height: 1.6rem;
 }
+
+@media (width <= 450px) {
+    .dropdown {
+        width: 22.58rem;
+    }
+}

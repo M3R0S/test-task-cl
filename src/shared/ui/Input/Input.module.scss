@@ -55,3 +55,11 @@
         }
     }
 }
+
+@media (width <= 450px) {
+    .input {
+        &.primary {
+            width: 20rem;
+        }
+    }
+}

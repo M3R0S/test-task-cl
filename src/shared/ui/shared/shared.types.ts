@@ -1,5 +1,5 @@
 export type SharedTheme = "clear" | "without_filling" | "filling";
-export type SharedType = "text" | "icon"
+export type SharedType = "text" | "icon";
 export type SharedSize = "12" | "14";
 export type SharedGap =
     | "2"
@@ -29,4 +29,5 @@ export type SharedGap =
     | "50"
     | "56"
     | "64"
-    | "86";
+    | "88";
+

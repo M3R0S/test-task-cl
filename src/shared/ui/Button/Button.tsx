@@ -13,6 +13,7 @@ export const Button: FC<ButtonProps> = (props) => {
         size = "14",
         isDisabled = false,
         gap,
+        type = "button",
         themeType = "text",
         ...otherProps
     } = props;
@@ -20,6 +21,7 @@ export const Button: FC<ButtonProps> = (props) => {
     return (
         <button
             disabled={isDisabled}
+            type={type}
             className={classNames(
                 cl.button,
                 className,
