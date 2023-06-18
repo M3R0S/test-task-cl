@@ -23,6 +23,10 @@ export const Stepper: FC<StepperProps> = memo((props) => {
             alignItems="start"
             className={classNames(cl.stepper, className)}
         >
+            <div
+                className={classNames(cl.line)}
+                style={{ width: dot2 ? "50%" : dot3 ? "100%" : 0 }}
+            />
             <Button
                 className={classNames(cl.btn)}
                 theme="clear"
