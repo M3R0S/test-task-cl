@@ -31,5 +31,31 @@
 
 .text {
     height: 1.6rem;
+}
+
+.symbols {
+    height: 1.6rem;
     cursor: help;
+}
+
+@media (width <= 1000px) {
+    .textarea {
+        min-width: 38rem;
+        max-width: 38rem;
+    }
+
+    .text_wrapper {
+        width: 38rem;
+    }
+}
+
+@media (width <= 500px) {
+    .textarea {
+        min-width: 20rem;
+        max-width: 20rem;
+    }
+
+    .text_wrapper {
+        width: 20rem;
+    }
 }

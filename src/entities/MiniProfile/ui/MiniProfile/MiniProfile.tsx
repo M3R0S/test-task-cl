@@ -53,12 +53,18 @@ export const MiniProfile: FC<MiniProfileProps> = memo((props) => {
             gap="24"
             className={classNames(cl.mini_profile, className)}
         >
-            <Avatar
-                src={avatar}
-                width={80}
-                height={80}
-                borderRadius="50proc"
-            />
+            <AppLink
+                theme="clear"
+                to="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+                target="_blank"
+            >
+                <Avatar
+                    src={avatar}
+                    width={80}
+                    height={80}
+                    borderRadius="50proc"
+                />
+            </AppLink>
             <VStack gap="8">
                 <Text
                     theme="primary"
@@ -79,6 +85,7 @@ export const MiniProfile: FC<MiniProfileProps> = memo((props) => {
                             size="12"
                             key={id}
                             to={src}
+                            target="_blank"
                             onMouseEnter={handleMouseEnter(index)}
                             onMouseLeave={handleMouseLeave(index)}
                         >

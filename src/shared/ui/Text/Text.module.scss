@@ -19,6 +19,20 @@
         color: var(--color-secondary);
     }
 
+    &.align {
+        &_center {
+            text-align: center;
+        }
+
+        &_start {
+            text-align: start;
+        }
+
+        &_end {
+            text-align: end;
+        }
+    }
+
     &.size {
         &_20_600 {
             font: var(--font-20-600-26);

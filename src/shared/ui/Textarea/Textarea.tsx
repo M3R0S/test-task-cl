@@ -43,7 +43,7 @@ export const Textarea = memo(
                     })}
                     {...otherProps}
                 />
-                <HStack justifyContent="space_between">
+                <HStack className={cl.text_wrapper} justifyContent="space_between">
                     <Text
                         Tag="p"
                         className={cl.text}
@@ -54,7 +54,7 @@ export const Textarea = memo(
                     </Text>
                     <Text
                         Tag="p"
-                        className={cl.text}
+                        className={cl.symbols}
                         size="12_400"
                         theme="primary"
                         title="Количество символов без учёта пробелов"

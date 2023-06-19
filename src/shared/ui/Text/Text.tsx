@@ -10,12 +10,13 @@ export const Text = (props: TextProps) => {
         Tag = "span",
         theme = "primary",
         size = "14_400",
+        align,
         ...otherProps
     } = props;
 
     return (
         <Tag
-            className={classNames(cl.text, cl[theme], cl[`size_${size}`], className)}
+            className={classNames(cl.text, cl[theme], cl[`size_${size}`], cl[`align_${align}`], className)}
             {...otherProps}
         >
             {children}

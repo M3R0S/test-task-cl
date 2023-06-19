@@ -40,6 +40,7 @@ export const SendFormModal: FC<SendFormModalProps> = memo((props) => {
                         Tag="h1"
                         size="20_600"
                         theme="primary"
+                        align="center"
                     >
                         {data?.message || "Ошибка"}
                     </Text>
@@ -84,6 +85,7 @@ export const SendFormModal: FC<SendFormModalProps> = memo((props) => {
                     Tag="h1"
                     size="20_600"
                     theme="primary"
+                    align="center"
                 >
                     {data?.message || "Запрос успешно отправлен"}
                 </Text>
