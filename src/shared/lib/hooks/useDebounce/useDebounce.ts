@@ -1,5 +1,11 @@
 import { useCallback, useEffect, useRef } from "react";
-
+/**
+ * Хук для реализации дебаунса
+ * 
+ * @param callback Любая функция, которую нужно задебаунсить
+ * @param delay Задержка в миллисекундах
+ * @returns Дебаунс функция
+ */
 export const useDebounce = (callback: (...args: any[]) => void, delay: number) => {
     const timerRef = useRef<NodeJS.Timeout | null>(null);
     const isSuccessRef = useRef<boolean>(false);

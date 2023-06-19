@@ -5,6 +5,6 @@
  * 
  * @param T - Необходимо передать typeof Object as const.
  * 
- * @returns Unit type и объект с значениями.
+ * @returns Unit type и объект со значениями.
  */
 type ValueOf<T> = T[keyof T];

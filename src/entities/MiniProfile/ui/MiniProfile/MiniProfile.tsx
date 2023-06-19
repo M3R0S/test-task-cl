@@ -50,7 +50,7 @@ export const MiniProfile: FC<MiniProfileProps> = memo((props) => {
     return (
         <HStack
             Tag="header"
-            gap="24"
+            columnGap="24"
             className={classNames(cl.mini_profile, className)}
         >
             <AppLink
@@ -65,7 +65,7 @@ export const MiniProfile: FC<MiniProfileProps> = memo((props) => {
                     borderRadius="50proc"
                 />
             </AppLink>
-            <VStack gap="8">
+            <VStack rowGap="8">
                 <Text
                     theme="primary"
                     Tag="h1"

@@ -42,6 +42,7 @@ const CheckBoxGroup = <T extends number | string>(
     );
 };
 
+// Приведение типов, для нормализации работы дженнериков компонента
 const ForwardRefCheckBoxGroup = forwardRef(CheckBoxGroup) as <T extends string | number>(
     props: CheckBoxGroupProps<T> & { ref?: ForwardedRef<HTMLInputElement> }
 ) => ReturnType<typeof CheckBoxGroup>;

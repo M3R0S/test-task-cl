@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 
 import { useDebounce } from "../useDebounce";
 
+/**
+ * Хук, для получения данных о изменении размера страницы
+ * 
+ * @returns Высота и Ширина
+ */
 export const useScreenSize = () => {
     const [screenWidth, setScreenWidth] = useState<number>(0);
     const [screenHeight, setScreenHeight] = useState<number>(0);

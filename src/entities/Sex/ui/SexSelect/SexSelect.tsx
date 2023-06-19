@@ -1,7 +1,7 @@
 import { FC, ForwardedRef, forwardRef, memo } from "react";
 
 import { SexSelectProps } from "./SexSelect.types";
-import { Sex } from "../../model/types/sexState";
+import { Sex, SexKey } from "../../model/types/sexState";
 
 import { Dropdown, SelectOptions } from "shared/ui/Dropdown";
 
@@ -17,12 +17,12 @@ const options: SelectOptions<keyof typeof Sex, Sex>[] = [
 ];
 
 export const SexSelect: FC<SexSelectProps> = memo(
-    forwardRef((props, ref: ForwardedRef<HTMLUListElement>) => {
+    forwardRef((props, ref: ForwardedRef<HTMLElement>) => {
         const { className, value, defaultValue, name, onBlur, onChange, validateMessage, isDirty } =
             props;
 
         return (
-            <Dropdown<keyof typeof Sex, Sex>
+            <Dropdown<SexKey, Sex>
                 value={value}
                 options={options}
                 defaultValue={defaultValue}

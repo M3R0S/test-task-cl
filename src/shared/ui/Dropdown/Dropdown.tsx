@@ -83,8 +83,9 @@ const Dropdown = <T extends string, K extends string>(props: DropdownProps<T, K>
     );
 };
 
+// Приведение типов, для нормализации работы дженнериков компонента
 const ForwardRefDropdown = forwardRef(Dropdown) as <T extends string, K extends string>(
-    props: DropdownProps<T, K> & { ref?: ForwardedRef<HTMLUListElement> }
+    props: DropdownProps<T, K> & { ref?: ForwardedRef<HTMLElement> }
 ) => ReturnType<typeof Dropdown>;
 
 export const MemoDropdown = genericMemo(ForwardRefDropdown);
