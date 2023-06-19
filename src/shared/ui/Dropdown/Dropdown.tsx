@@ -22,6 +22,7 @@ const Dropdown = <T extends string, K extends string>(props: DropdownProps<T, K>
         isDirty,
         onBlur,
         value,
+        id,
         defaultValue,
     } = props;
 
@@ -32,7 +33,7 @@ const Dropdown = <T extends string, K extends string>(props: DropdownProps<T, K>
                     theme="primary"
                     size="14_400"
                     Tag="label"
-                    htmlFor={name}
+                    htmlFor={id}
                 >
                     {label}
                 </Text>
@@ -41,7 +42,7 @@ const Dropdown = <T extends string, K extends string>(props: DropdownProps<T, K>
                 value={value || defaultValue}
                 name={name}
                 openMenuOnFocus
-                id={name}
+                id={id}
                 ref={ref}
                 unstyled
                 isSearchable={false}

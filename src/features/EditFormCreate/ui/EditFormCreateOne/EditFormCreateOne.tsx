@@ -71,6 +71,7 @@ export const EditFormCreateOne: FC<EditFormCreateOneProps> = memo((props) => {
             <VStack rowGap="24">
                 <Input
                     {...register("nickname")}
+                    id="field-nickname"
                     theme="primary"
                     label="Ник"
                     placeholder="M3R0S"
@@ -79,6 +80,7 @@ export const EditFormCreateOne: FC<EditFormCreateOneProps> = memo((props) => {
                 />
                 <Input
                     {...register("name")}
+                    id="field-name"
                     theme="primary"
                     label="Имя"
                     placeholder="Богдан"
@@ -87,6 +89,7 @@ export const EditFormCreateOne: FC<EditFormCreateOneProps> = memo((props) => {
                 />
                 <Input
                     {...register("surname")}
+                    id="field-sername"
                     theme="primary"
                     label="Фамилия"
                     placeholder="Москаленко"
@@ -98,6 +101,7 @@ export const EditFormCreateOne: FC<EditFormCreateOneProps> = memo((props) => {
                     control={control}
                     render={({ field, fieldState }) => (
                         <SexSelect
+                            id="field-sex"
                             validateMessage={errors.sex?.value?.message}
                             isDirty={fieldState.isDirty}
                             {...field}

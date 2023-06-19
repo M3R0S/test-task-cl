@@ -18,8 +18,17 @@ const options: SelectOptions<keyof typeof Sex, Sex>[] = [
 
 export const SexSelect: FC<SexSelectProps> = memo(
     forwardRef((props, ref: ForwardedRef<HTMLElement>) => {
-        const { className, value, defaultValue, name, onBlur, onChange, validateMessage, isDirty } =
-            props;
+        const {
+            className,
+            value,
+            defaultValue,
+            name,
+            onBlur,
+            onChange,
+            validateMessage,
+            isDirty,
+            id,
+        } = props;
 
         return (
             <Dropdown<SexKey, Sex>
@@ -35,6 +44,7 @@ export const SexSelect: FC<SexSelectProps> = memo(
                 label="Пол"
                 validateMessage={validateMessage}
                 isDirty={isDirty}
+                id={id}
             />
         );
     })

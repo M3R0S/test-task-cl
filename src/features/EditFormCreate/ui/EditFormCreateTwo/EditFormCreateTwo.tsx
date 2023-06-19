@@ -153,6 +153,7 @@ export const EditFormCreateTwo: FC<EditFormCreateTwoProps> = memo((props) => {
                                         <Button
                                             theme="clear"
                                             themeType="icon"
+                                            id={`button-remove-${index + 1}`}
                                             onClick={handleDelete(index)}
                                             onMouseEnter={handleMouseEnter(index)}
                                             onMouseLeave={handleMouseLeave(index)}
@@ -168,6 +169,7 @@ export const EditFormCreateTwo: FC<EditFormCreateTwoProps> = memo((props) => {
                         </TransitionGroup>
                     </VStack>
                     <Button
+                        id="button-add"
                         theme="without_filling"
                         themeType="icon"
                         onClick={onAdd}
@@ -186,7 +188,10 @@ export const EditFormCreateTwo: FC<EditFormCreateTwoProps> = memo((props) => {
                     {...register("radioGroup")}
                 />
             </VStack>
-            <ButtonsControlStep onBack={onBack} step={step} />
+            <ButtonsControlStep
+                onBack={onBack}
+                step={step}
+            />
         </VStack>
     );
 });

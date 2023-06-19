@@ -100,6 +100,7 @@ export const EditProfileContacts: FC<EditProfileContactsProps> = memo((props) =>
                 theme="filling"
                 type="submit"
                 onClick={onStart}
+                id="button-start"
             >
                 Начать
             </Button>

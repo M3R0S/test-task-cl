@@ -14,6 +14,7 @@ export interface DropdownProps<T extends string, K extends string> {
     name?: string;
     label?: string;
     isDirty?: boolean;
+    id?: string
     /**
      * Валидационное сообщение
      */

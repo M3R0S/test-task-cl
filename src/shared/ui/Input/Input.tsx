@@ -16,6 +16,7 @@ export const Input = memo(
             isValidate = true,
             isDirty = false,
             name,
+            id,
             inputSize = "300",
             isDisabled,
             ...otherProps
@@ -28,7 +29,7 @@ export const Input = memo(
                 {label && (
                     <Text
                         Tag="label"
-                        htmlFor={name}
+                        htmlFor={id}
                         theme="primary"
                         size="14_400"
                     >
@@ -37,7 +38,7 @@ export const Input = memo(
                 )}
                 <input
                     name={name}
-                    id={name}
+                    id={id}
                     ref={ref}
                     disabled={isDisabled}
                     className={classNames(cl.input, className, cl[theme], cl[`size_${inputSize}`], {

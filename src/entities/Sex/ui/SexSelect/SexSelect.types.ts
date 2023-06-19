@@ -14,4 +14,5 @@ export interface SexSelectProps {
     onBlur?: VoidFunction;
     name?: string;
     validateMessage?: string;
+    id?: string
 }

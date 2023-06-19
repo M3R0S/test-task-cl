@@ -68,6 +68,7 @@ export const SendFormModal: FC<SendFormModalProps> = memo((props) => {
                     className={cl.closed}
                     onClick={onClose}
                     theme="filling"
+                    id="button-close"
                 >
                     Закрыть
                 </Button>
@@ -105,6 +106,7 @@ export const SendFormModal: FC<SendFormModalProps> = memo((props) => {
                     to={PathRoutes.MAIN}
                     theme="filling"
                     onClick={onClose}
+                    id="button-to-main"
                 >
                     На главную
                 </AppLink>
